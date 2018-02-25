@@ -8,7 +8,32 @@
     <%= javascript_include_tag 'application', 'data-turbolinks-track': 'reload' %>
   </head>
 
+  <div class="navbar">
+	<a href="/">Home</a>
+
+    <% if !current_user %>
+    	<a href='/login'>Login</a>
+	<% else %>
+		<a href='/users/<%= current_user.id %>'>Profile</a>		
+	<%end%>
+
+	<a href="/users">All Users</a>
+
+	<a href="/users/new">Signup</a>
+
+	<% if current_user %>
+  	Signed in as <%= current_user.fname %> | <%= link_to "Logout", '/logout' %>
+	<% else %>
+  	<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/users/new' %>
+	<% end %>
+
+	
+	
+</div>
+
   <body>
+
+  	<%= flash[:message] if flash[:message] %>
     <%= yield %>
   </body>
 </html>
