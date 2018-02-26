@@ -6,3 +6,6 @@
 <div><%= f.text_area :content %></div>
   <%= f.submit %>
 <% end %>
+
+<%= link_to "delete", @post, :method => :delete, :confirm => "You sure?", 
+                            :title => "Delete #{@post.title}" %>
