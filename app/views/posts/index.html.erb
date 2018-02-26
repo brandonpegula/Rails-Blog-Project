@@ -1,0 +1,8 @@
+<h2>Current Blog Posts:</h2>
+
+<% @posts.each do |p| %>
+	
+	<a href='/posts/<%= p.id %>'><div><%= p.title %></div></a>
+	<div><%= p.content %></div>
+	
+<% end %>

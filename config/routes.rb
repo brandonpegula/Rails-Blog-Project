@@ -1,25 +1,13 @@
 Rails.application.routes.draw do
-  get 'blogs/index'
 
-  get 'blogs/create'
+  resources :users
+  resources :posts
+  resources :comments
 
-  get 'blogs/new'
+  root to: "posts#index"
+  get '/login', to: 'sessions#new'
+  post '/login', to: 'sessions#create'
+  get '/logout', to: 'sessions#destroy'
 
-  get 'blogs/show'
 
-  get 'blogs/edit'
-
-  get 'blogs/update'
-
-  get 'blogs/destroy'
-
-  get 'users/index'
-
-  get 'users/new'
-
-  get 'users/show'
-
-  get 'users/edit'
-
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
