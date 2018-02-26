@@ -1,3 +1,36 @@
+body{
+    margin: 0 auto;
+}
+
+
+.navbar {
+    background-color: #CC8E35;
+    overflow: hidden;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+    font-family: MyFont;
+ }
+
+ .navbar a {
+    float: left;
+    display: block;
+    color: white;
+    text-align: center;
+    padding: 2vh 5vh;
+    text-decoration: none;
+    font-size: 2.5vh;
+    font-family: MyFont;
+
+ }
+
+ .navbar a:hover {
+    background-color: lightgrey;
+    color: black;
+ }
+
+
+
 /*
  * This is a manifest file that'll be compiled into application.css, which will include all the files
  * listed below.

@@ -1,4 +1,16 @@
 <h1>User Profile</h1>
 
+<h2>Welcome <%= @user.fname %> <%= @user.lname %></h2>
+
+<div>Username:
+
+<%= @user.username %>
+
+<a href='/users/<%= @user.id %>/edit'>Edit/Delete</a></div>
+
 <input type="Submit" Value="Create new blog">
+
+
+<p><%= link_to "Add a new Post", new_post_path %></p>
+
 

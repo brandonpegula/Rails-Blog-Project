@@ -14,17 +14,16 @@
     <% if !current_user %>
     	<a href='/login'>Login</a>
 	<% else %>
-		<a href='/users/<%= current_user.id %>'>Profile</a>		
+		<a href='/users/<%= current_user.id %>'><%= current_user.fname %>'s Profile</a>		
 	<%end%>
 
 	<a href="/users">All Users</a>
 
-	<a href="/users/new">Signup</a>
 
 	<% if current_user %>
-  	Signed in as <%= current_user.fname %> | <%= link_to "Logout", '/logout' %>
+  	<%= link_to "Logout", '/logout' %>
 	<% else %>
-  	<%= link_to 'Login', '/login' %> | <%= link_to 'Signup', '/users/new' %>
+  	<%= link_to 'Signup', '/users/new' %>
 	<% end %>
 
 	

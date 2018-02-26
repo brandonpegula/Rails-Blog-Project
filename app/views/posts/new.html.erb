@@ -1,16 +1,10 @@
-<h3>Create a new form for Blogs</h3>
+<h3>Add a new Post</h3>
 
-
-<%= form_tag '/users/:user_id/posts' do %>
-
-<%= text_field_tag :title %>
-<%= text_area_tag :content %>
-<%= submit_tag 'Submit' %>
-<% end %>
  
- <%= form_for @post, :url => posts_path do |f| %>
-
-<%= f.text_field :title %>
-<%= f.text_area :content %>
-<%= f.submit %>
+ <%= form_for @post do |f| %>
+<div><%= f.label :title %><br />
+	<%= f.text_field :title %></div>
+<div><%= f.label :content %><br />
+	<%= f.text_area :content %></div>
+  <%= f.submit "Create Post" %>
 <% end %>
