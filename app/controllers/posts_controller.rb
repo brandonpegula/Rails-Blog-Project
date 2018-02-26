@@ -12,10 +12,10 @@ class PostsController < ApplicationController
   end
 
   def create
-    @post = Post.new(post_params)
-    if @post.save
+    post = current_user.posts.build(post_params)
+    if post.save
       flash[:message] = 'Your post was created successfully'
-      redirect_to root_path
+      redirect_to "/posts"
     else
       flash[:message] = 'try again'
       render "new"
@@ -31,16 +31,22 @@ class PostsController < ApplicationController
   end
 
   def update
-    @post = Post.find(params[:id])
-      if post.update(blog_params)
+    post = Post.find(params[:id])
+    post.assign_attributes(post_params)
+      if post.save
       flash[:message] = "Sucessfully Updated"
-      redirect_to '/posts/#{post.id}/'
+      redirect_to "/posts/#{post.id}/"
       else 
-        render "/posts/#{posts.id}/edit"
+        render "/posts/#{post.id}/edit"
       end
   end
 
+
   def destroy
+    post = Post.find(params[:id])
+    post.destroy
+    flash[:message] = "Post deleted"
+    redirect_to "/posts"
   end
 
   private
