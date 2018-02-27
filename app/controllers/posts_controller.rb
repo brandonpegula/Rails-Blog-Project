@@ -3,6 +3,7 @@ class PostsController < ApplicationController
   before_action :authenticate_with_http_digest, except: [:index, :show]
 
 
+
   def index
     @posts = Post.all
   end
@@ -15,7 +16,7 @@ class PostsController < ApplicationController
     post = current_user.posts.build(post_params)
     if post.save
       flash[:message] = 'Your post was created successfully'
-      redirect_to "/posts"
+      redirect_to "/posts/#{post.id}"
     else
       flash[:message] = 'try again'
       render "new"
@@ -24,6 +25,7 @@ class PostsController < ApplicationController
 
   def show
     @post = Post.find(params[:id])
+    @comments = Comment.where(post_id: @post).order("created_at DESC")
   end
 
   def edit
