@@ -1,8 +1,16 @@
 <h1>Selected post</h1>
 
-<h3>Written By: <%= @user.username %></h3>
 
 <div><%= @post.title %></div>
 <div><%= @post.content %></div>
 
-<h2>Comments:</h2>
+
+
+<h2>Add a comment:</h2>
+<%= render "comments/form" %>
+<%= render "comments/comment" %>
+
+<p><%= link_to 'Back to Posts',  posts_path %></p>
+
+
+
