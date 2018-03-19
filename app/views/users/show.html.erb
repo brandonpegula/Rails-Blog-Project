@@ -1,4 +1,4 @@
-<h1>User Profile</h1>
+<div class="profile"><h1>User Profile</h1>
 
 <h2>Welcome <%= @user.fname %> <%= @user.lname %></h2>
 
@@ -8,11 +8,11 @@
 
 <a href='/users/<%= @user.id %>/edit'>Edit</a></div>
 
+</div>
 
 
 
-
-
+<div class="blog-list">
 <h2>All Blog Posts:</h2>
 
 <p><%= link_to "Write a new Post", new_post_path %></p>
@@ -23,5 +23,5 @@
       
    <% end %>
 <% end %>
-
+</div>
 
