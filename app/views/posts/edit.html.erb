@@ -1,11 +1,9 @@
-<h1>Posts#edit</h1>
-<p>Find me in app/views/posts/edit.html.erb</p>
+<h2>Edit Post</h2>
 
 <%= form_for @post do |f| %>
-<div><%= f.text_field :title %></div>
-<div><%= f.text_area :content %></div>
+<div>Title:<br><%= f.text_field :title %></div>
+<div>Content:<br><%= f.text_area :content %></div>
   <%= f.submit %>
 <% end %>
 
-<%= link_to "delete", @post, :method => :delete, :confirm => "You sure?", 
-                            :title => "Delete #{@post.title}" %>
+<%= link_to "delete", @post, :method => :delete, :confirm => "You sure?", :title => "Delete #{@post.title}" %>

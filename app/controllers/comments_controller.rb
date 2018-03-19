@@ -10,6 +10,7 @@ class CommentsController < ApplicationController
 
   	if @comment.save
     	redirect_to post_path(@post)
+
   	else
     	render "new"
   end
@@ -28,6 +29,7 @@ end
   	def update
   		if @comment.update(params[:comment].permit(:message))
   			redirect_to post_path(@post)
+  			flash[:message] = "Post Updated"
   		else
   			render "edit"
   		end
@@ -36,6 +38,7 @@ end
   	def destroy
     	@comment.destroy
     	redirect_to post_path(@post)
+    	flash[:message] = "Post Deleted"
   	
   	end
 
@@ -51,7 +54,7 @@ end
 
   	def comment_owner
   		unless current_user.id == @comment.user_id
-  			flash[:notice] = "You can't access this."
+  			flash[:message] = "You can't access this."
   			redirect_to @post
   		end
   	end

@@ -1,14 +1,17 @@
-<h2>Create a new User:</h2>
+<div class="profile"><h2>Create a new User:</h2>
 
 <%= form_for :user, url: '/users' do |f| %>
 
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
+  Username: <%= f.text_field :username %><br>
+  Email: <%= f.text_field :email %><br>
   First Name:<%= f.text_field :fname %><br>
   Last Name:<%= f.text_field :lname %><br>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  Password: <%= f.password_field :password %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  <br>
   <%= f.submit "Submit" %>
 
 <% end %>
+
+</div>
 

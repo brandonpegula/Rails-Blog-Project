@@ -6,9 +6,16 @@
 
 
 
-<h2>Add a comment:</h2>
-<%= render "comments/form" %>
+
 <%= render "comments/comment" %>
+<h2>Write a note:</h2>
+
+<% if current_user %>
+    <%= render "comments/form" %>
+<% else %>
+    <%= link_to 'Login to Comment', login_path %>
+<% end %>
+
 
 <p><%= link_to 'Back to Posts',  posts_path %></p>
 
