@@ -1,24 +1,25 @@
-# README
+# Rails Blog README
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+This blog was created using Ruby on Rails as a class project. You have the ability to create your own user profile, posts and comments.
 
-Things you may want to cover:
+Users = CRUD
+Posts = CRUD
+Comments = CRD
 
 * Ruby version
 
-* System dependencies
+    - ruby 2.4.1p111 (2017-03-22 revision 58053)
 
-* Configuration
+* Gems used
+
+    - 'bcrypt', '~> 3.1.7'
 
 * Database creation
 
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
+    - run "rails db:migrate" and "bundle install"
 
 * Deployment instructions
 
-* ...
+    - run "rails s" to start server and navigate to localhost:3000 in your browser.
+
+Please contact me with any additonal information.
