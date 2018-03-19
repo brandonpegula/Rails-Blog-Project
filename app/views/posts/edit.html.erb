@@ -1,9 +1,14 @@
-<h2>Edit Post</h2>
+<div class="post-show"><h2>Edit Post</h2>
 
 <%= form_for @post do |f| %>
 <div>Title:<br><%= f.text_field :title %></div>
 <div>Content:<br><%= f.text_area :content %></div>
+<br>
   <%= f.submit %>
 <% end %>
 
-<%= link_to "delete", @post, :method => :delete, :confirm => "You sure?", :title => "Delete #{@post.title}" %>
+</div>
+
+<div class="post-show">
+<%= link_to "Delete Post", @post, method: :delete, data: {:confirm => "You sure?"} %>
+</div>

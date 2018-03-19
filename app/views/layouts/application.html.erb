@@ -28,7 +28,7 @@
 
   <body>
 
-  	<%= flash[:message] if flash[:message] %>
+  	<div class="alert"><%= flash[:message] if flash[:message] %></div>
     <script>
       setInterval(function() {
         var d = new Date();

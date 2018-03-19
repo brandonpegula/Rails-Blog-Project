@@ -1,18 +1,19 @@
-<h1>Users#edit</h1>
-<p>Find me in app/views/users/edit.html.erb</p>
+<div class="profile"><h2>Edit User</h2>
 
 <%= form_for(@user) do |f| %>
 
-  Username: <%= f.text_field :username %>
-  Email: <%= f.text_field :email %>
+  Username: <%= f.text_field :username %><br>
+  Email: <%= f.text_field :email %><br>
   First Name:<%= f.text_field :fname %><br>
   Last Name:<%= f.text_field :lname %><br>
-  Password: <%= f.password_field :password %>
-  Password Confirmation: <%= f.password_field :password_confirmation %>
+  Password: <%= f.password_field :password %><br>
+  Password Confirmation: <%= f.password_field :password_confirmation %><br>
+  <br>
   <%= f.submit "Submit" %>
 
+</div>
 
-
-<%= link_to "destroy", @user, method: :delete,
-                                  data: { confirm: "You sure?" } %>
+<div class="profile">
+<%= link_to "Delete Account", @user, method: :delete, data: { confirm: "You sure?" } %>
  <% end %>
+</div>

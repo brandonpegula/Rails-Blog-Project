@@ -1,12 +1,13 @@
-<h1>Selected post</h1>
+<div class="post-show"><h1>Selected post</h1>
 
 
 <div><%= @post.title %></div>
 <div><%= @post.content %></div>
 
 
+</div>
 
-
+<div class="post-show">
 <%= render "comments/comment" %>
 <h2>Write a note:</h2>
 
@@ -16,8 +17,10 @@
     <%= link_to 'Login to Comment', login_path %>
 <% end %>
 
+</div>
 
+<div class="post-show">
 <p><%= link_to 'Back to Posts',  posts_path %></p>
-
+</div>
 
 
